@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getHotArtists, getArtistTags, Artist, Tag } from '../api/lastfm';
+import { getHotArtists, getArtistTags, Artist, Tag } from '../API/Lastfm';
 
-export default function HotRightNow() {
+export default function RenderTopArtists() {
   const [artists, setArtists] = useState<Artist[]>([]);
 
   useEffect(() => {

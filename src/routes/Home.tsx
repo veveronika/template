@@ -1,4 +1,4 @@
-import HotRightNow from '../components/HotRightNow';
+import RenderTopArtists from '../components/RenderTopArtists';
 import PopularTracks from '../components/PopularTracks';
 import '../styles.css'; 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <div className="content__top">
         <h1 className="content__top-header">Music</h1>
       </div>
-      <HotRightNow />
+      <RenderTopArtists />
       <PopularTracks />
     </>
   );

@@ -8,7 +8,7 @@ import {
   Album,
   Track,
   TrackInfo
-} from '../api/lastfm';
+} from '../API/Lastfm';
 
 type FullTrack = Track & TrackInfo;
 

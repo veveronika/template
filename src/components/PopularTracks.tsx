@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getHotTracks, getTrackTags, Track, Tag } from '../api/lastfm';
+import { getHotTracks, getTrackTags, Track, Tag } from '../API/Lastfm';
 
 export default function PopularTracks() {
   const [tracks, setTracks] = useState<Track[]>([]);
