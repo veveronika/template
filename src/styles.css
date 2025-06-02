@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: Arial, sans-serif;
+  --color-bg: #fff;
+  --color-text: #222222;
+  --color-accent: #e60023;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 21px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding-top: 68px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.header__logo-link {
+  display: block;
+  width: 120px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Lastfm_logo.svg/1200px-Lastfm_logo.svg.png') no-repeat left center / contain;
+  color: transparent;
+}
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.header__nav-item {
+  margin-left: 32px;
+}
+
+.header__nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+.header__search {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  min-width: 16px;
+  min-height: 16px;
+  background: url('../public/images/search.png') no-repeat right center / contain;
+}
+
+.header__avatar {
+  margin-left: 36px;
+  height: 36px;
+}
+
+.header__avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+
+.content {
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 48px;
+}
+
+.content__top {
+  background: var(--color-bg);
+  padding: 0 20px;
+}
+
+.content__top-header {
+  margin: 48px 0 0;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 54px;
+  text-align: center;
+}
+
+.popular-tracks,
+.hot-right-now {
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.popular-tracks__title,
+.hot-right-now__title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.popular-tracks__underline,
+.hot-right-now__underline {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 20px auto 32px;
+}
+
+.popular-tracks__columns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.popular-tracks__col {
+  flex: 0 1 300px; 
+  min-width: 280px; 
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.popular-tracks__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  min-height: 66px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.popular-tracks__thumb {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.popular-tracks__info {
+  margin-left: 12px;
+  line-height: 1.2;
+  flex-grow: 1;
+}
+
+.popular-tracks__track {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #222222;
+  text-decoration: none;
+  display: block;
+}
+
+.popular-tracks__artist {
+  font-size: 13px;
+  color: #222222;
+  text-decoration: none;
+}
+
+.popular-tracks__tags {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.hot-right-now__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  min-height: 420px;
+}
+
+.hot-right-now__media{
+  text-decoration: none;
+}
+
+.hot-right-now__item {
+  min-height: 184px;
+  min-width: 150px;
+  text-align: center;
+}
+
+.hot-right-now__thumb {
+  width: 120px;
+  height: 120px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 12px;
+}
+
+.hot-right-now__name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-decoration: none;
+  color:#222222;
+}
+
+.hot-right-now__tags {
+  font-size: 11px;
+  color: #888;
+}
+
+.popular-tracks__item:hover .popular-tracks__thumb {
+  filter: brightness(0.95);
+}
+
+.popular-tracks__item:hover .popular-tracks__track {
+  text-decoration: underline;
+}
+
+.popular-tracks__media:hover .popular-tracks__thumb,
+.hot-right-now__media:hover .hot-right-now__thumb {
+  filter: brightness(0.95);
+}
+
+.popular-tracks__media:hover .popular-tracks__track,
+.hot-right-now__media:hover .hot-right-now__name {
+  text-decoration: underline;
+}
+
+.hot-right-now__tag,
+.popular-tracks__tag {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  position: relative;
+  margin-right: 9px;
+}
+
+.hot-right-now__tag:not(:last-child)::after,
+.popular-tracks__tag:not(:last-child)::after {
+  content: " · ";
+  position: absolute;
+  right: -6px;
+  top: 0;
+}
+
+.hot-right-now__tag:not(:last-child)::after {
+  top: -3px;
+}
+
+.popular-tracks__tag:hover,
+.hot-right-now__tag:hover,
+.popular-tracks__artist:hover {
+  text-decoration: underline;
+}
+
+
+.footer {
+  background-color: #111;
+  padding: 40px 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.footer__container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px; 
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer__section {
+  flex: 1;
+  min-width: 120px;
+  margin: 0 10px;
+}
+
+.footer__title {
+  margin-bottom: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__item {
+  margin-bottom: 8px;
+}
+
+.footer__link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #555;
+}
+
+.footer__info {
+  flex: 1;
+}
+
+.footer__languages {
+  margin-bottom: 10px;
+}
+
+.footer__language {
+  margin-right: 8px;
+  color: #888;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer__language--active {
+  color: #e6e6e6;
+}
+
+.footer__timezone {
+  margin-bottom: 10px;
+}
+
+.footer__legal {
+  flex: 1;
+  color: #444;
+  margin-top: 10px;
+}
+
+.popular-tracks,
+.hot-right-now,
+.footer__container {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.popular-tracks__item {
+  min-width: 0;
+  flex-shrink: 1;
+  width: 100%;
+  max-width: 344px;
+}
+
